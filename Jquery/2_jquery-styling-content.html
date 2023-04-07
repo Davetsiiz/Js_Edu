@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <title>Jquery Styling</title>
+</head>
+<body>
+    <h3 id="header">Jquery Dersleri 2</h3>
+    <div >
+        <ul id="liste">
+            <li>Start</li>
+            <li class="item">Middle</li>
+            <li id="dli">Finish</li>
+        </ul>
+        <a href="#">LİNK</a>
+    </div>
+        <script>
+            // document.getElementById("header").style.color="red";
+            // document.getElementById("liste").style.color="blue";
+
+            $("#header").css("color","Green");
+            $("#liste").css("color","blue");
+            $("#dli").css("color","purple");
+            $("a").css("text-decoration","none");
+            
+            var styles=
+            {
+                color:"orange",
+                border:"1px solid red",
+                fontSize:"20px",
+                width:"10%",
+                textAlign: "center"
+            }
+            $("ul li").css(styles);
+            $(".item").css({
+                display:"none"
+            })
+
+            //js ile nasıl yapılır
+            var listeler=document.querySelectorAll("li");
+            for(var i=0; i<listeler.length;i++){
+                listeler[i].style.color="orange";
+            }
+            //!important komutu=> son yazılan ne olursa olsun seçilen komutu devreye alır
+        </script>
+</body>
+</html>
+

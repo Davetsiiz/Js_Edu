@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Event</title>
+    <link rel="shortcut icon" href="#">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+</head>
+<body>
+    <form>
+        <p>
+            Ad: <input id="ad"  type="text">
+        </p>
+        <p>
+            Hobiler: <select class="control">
+                <option value="spor" selected="selected">Spor Yapmak</option>
+                <option value="sinema">Sinema</option> 
+            </select>
+        </p>
+    </form>
+    <script>
+        $(document).ready(function(){
+            $(".control").change(function(){
+                var sel=$(this).val();
+                var ad=$("#ad").val();
+                alert("Chang Event Çalıştı..."+"\n"+ad+" Hobi olarak "+sel+" seçti.");
+            });
+        });
+    </script>
+</body>
+</html>

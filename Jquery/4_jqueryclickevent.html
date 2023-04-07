@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Click Event</title>
+    <link rel="shortcut icon" href="#">
+    <style>
+        .paragrafrenklendir{
+            color: red;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Jquery Click Event</h3>
+    <div>
+        <ul>
+            <li>Start</li>
+            <li>Mid</li>
+            <li>Finish</li>
+        </ul>
+    </div>
+<p id="p1">Web Developer Eğitimi</p>
+<p id="p2">Web Developer Eğitimi</p>
+<p class="paragraf">Web Developer Eğitimi</p>
+<p class="paragraf">Web Developer Eğitimi</p>
+  <script>
+    $("body").css("textAlign","center");
+    $(document).ready(function(){
+        console.log("ready!");
+    });
+    $(function(){
+        console.log("ready1!")
+    });
+    $(document).ready(function(){
+        $("#p1").click(function(){
+            alert("p1 Click Event Ready!");
+        });
+    });
+    $(document).ready(function(){
+        $(".paragraf").click(function(){
+            alert("Paragraf çalıştı");
+            $(this).addClass("paragrafrenklendir"); //sadece tıkladığım nesne için çalışır. eğer this yerine .paragraf yazarsak bütün .paragraf classları için çalışır.
+            
+        });
+    });
+
+
+  </script>
+</body>
+</html>

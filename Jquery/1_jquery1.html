@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+</head>
+<body>
+    <h2>jquery Dersleri</h2>
+    <a href="#">Link</a>
+    <ul id="liste">
+        <li>jquery Referens</li>
+        <li>jquery Selectors</li>
+        <li>jquery Plugins<a href="#">Link</a></li>
+    </ul>
+    <table class="table table-primary">
+        <tr>
+            <th class="item">Deneme1</th>
+            <th class="item">Deneme2</th>
+            <th>Deneme3</th>
+        </tr>
+        <tr>
+            <td>Start</td>
+            <td>Mid</td>
+            <td>Finish</td>
+            <td>Finish <a href="#">Link</a></td>
+        </tr>
+    </table>
+    <script>
+       console.log($("#liste"));
+       console.log($("h2"));
+       console.log($("li"));
+       console.log($(".item"));
+       console.log($("a"));        // BÜtün a etiketlerini bulur 
+       console.log($("tr td a")); //hedefimizi belirleriz
+       console.log($("#liste li a")) // ayırmak istediğimize seçim yaparız
+    </script>
+</body>
+</html>

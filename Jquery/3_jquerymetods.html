@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Helper Methods</title>
+    <link rel="shortcut icon" href="#">
+    <style>
+        .highlight
+        {
+            background-color: royalblue;
+        }
+        .green
+        {
+            background-color:green;
+        }
+        .wrong{
+            background-color: red;
+        }
+    </style>
+</head>
+<body style="margin-block-start: 10%; margin-left: 25%;">
+    <div >
+        <h1>Jquery Helper Methods</h1>
+        <ol >
+            <li>Jquery Selector</li>
+            <li>Jquery Methods</li>
+            <li>Jquery Animatios</li>
+        </ol>
+        <img src="img/koala.jpg" width="200" alt="">
+        <br>
+        <input id="Val" type="text" placeholder="Jquery Deneme" value="Jquery Value">
+        <br>
+        <br>
+
+        <div >
+        <input id="ad" type="text" class="green" placeholder="Ad" >
+        <input id="soyad" type="text" class="green" placeholder="Soyad">
+        <button id="btnKaydet" onclick="adsoyad()">Kaydet</button>
+        </div>
+    </div>
+
+    <script>
+        console.log($("h1").text());
+        $("ol").css("textAlign",("center"));
+        console.log($("ol li").text());
+        $("h1").text("Jquery"); //h1 in içindeki yazıyı yenileriz
+        console.log($("#Val").val());  //get metodu
+        $("#Val").val("New Value");    //Set metodu
+        $("img").attr("width","360");
+        function adsoyad(){
+            var ad=$("#ad").val();
+            var soyad=$("#soyad").val();
+            alert("Adınız Soyadınız: "+ad+" "+soyad);
+            $("#ad , #soyad").removeClass("green");
+            $("#ad, #soyad").toggleClass("wrong"); //toggle eklenmişse çıkartır eklenmemişse ekler 
+            $("#ad , #soyad").addClass("highlight");
+            // yukardaki durumda toggle daha baskındır
+        }
+        </script>
+</body>
+</html>

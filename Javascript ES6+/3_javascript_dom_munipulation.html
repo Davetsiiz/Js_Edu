@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Manipulasyonu</title>
+    <style type="text/css">
+        .intro1 {
+            background-color: red;
+        }
+
+        .intro2 {
+            background-color: violet;
+        }
+
+        .intro3 {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="bio" class="intro1"></p>
+    <p id="intro1" class="intro2">İlk Paragraf</p>
+    <p id="intro2" class="intro2">İkinci Paragraf</p>
+    <p id="intro3">Üçüncü Paragraf</p>
+    <ul>
+        <li>Ankara</li>
+        <li>İstanbul</li>
+        <li>İzmir</li>
+    </ul>
+    <p id="mesaj"></p>
+    <input type="text" name="musteriadi" value="Emre Murat Eren">
+    <h1 id="Nesli" >Neslihan Dülgeroğlu</h1>
+    <h1 id="yazar"></h1>
+    <p id="agac" class="intro3">
+        Ağaç Değeri
+    </p>
+    <div id="div1">
+        <p id="P1" class="intro3">Bu kısım P1</p>
+        <p id="P2">Bu Kısım P2</p>
+    </div>
+    <script src="3_javascript_dom_munipulation.js"></script>
+
+
+    <button id="datetime" onclick="deneme">Saat</button>
+    <script>
+       document.getElementById("datetime").onclick=function(){
+        var nowdate=new Date();
+    document.getElementById("datetime").innerHTML=nowdate.toLocaleDateString();
+}
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <title>Jquery Effect</title>
+    <link rel="shortcut icon" href="#">
+</head>
+<body style="text-align: center;">
+    <h1>Jquery Effect</h1>
+    <p style="color: rgb(255, 174, 0); background-color: green;">Jquery Dersleri</p>
+    <div>
+        <h2>Slide Method</h2>
+        <button id="slideUp">Yukarı kaydır</button>
+        <button id="slideDown">Aşağı Kaydır</button>
+        <br>
+        <br>
+        <button id="slideToggle">Yukarı/Aşağı</button>
+    </div>
+    <br>
+    <div>
+        <h2>Fade Method</h2>
+        <button id="fadeout" style="color:orange;">Geçişli Sakla</button>
+        <button id="fadein" style="color:orange;">Geçişli Göster</button>
+        <br>
+        <br>
+        <button id="fadeToggle"  style="color:orange;">Sakla/Göster</button>
+        <br>
+        <br>
+        <button id="fadeTo"  style="color:orange;">Opaklaştır</button>
+
+    </div>
+    
+    <script>
+
+        $(document).ready(function(){
+
+
+            $("#slideUp").click(function(){
+                $("p").slideUp("slow");
+            });
+            $("#slideDown").click(function(){
+                $("p").slideDown("fast");
+            });
+            $("#slideToggle").click(function(){
+                $("p").slideToggle(1000);
+            });
+
+
+
+            $("#fadein").click(function(){
+                $("p").fadeIn("slow");
+            });
+            $("#fadeout").click(function(){
+                $("p").fadeOut("fast");
+            });
+            $("#fadeToggle").click(function(){
+                $("p").fadeToggle(1000);
+            });
+            $("#fadeTo").click(function(){
+                $("p").fadeTo("slow",0.2);
+            });
+
+
+        })
+    </script>
+</body>
+</html>
