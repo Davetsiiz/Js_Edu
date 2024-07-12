@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 2</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h4>Soru 1</h4>
+      <button v-on:click="alertFire">Click Me!</button>
+
+      <h4>Soru 2</h4>
+      <input v-on:keyup="reWriteP" placeholder="Write Here!" />
+      <p>{{pKeyWord}}</p>
+
+      <h4>Soru 3</h4>
+      <input v-on:keyup.enter="reWritePresEnter" placeholder="Write Here!" />
+      <p>{{pKeyWordWithEnter}}</p>
+    </div>
+  </body>
+</html>
+<!-- <script src="/Udemy_Vue/Modele1/2_Exercise/2_ex.js"></script> -->
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      pKeyWord: null,
+      pKeyWordWithEnter: null,
+    },
+    methods: {
+      alertFire: function () {
+        alert("Ödev 2. \n1.soru");
+      },
+      reWriteP: function (event) {
+        this.pKeyWord = event.target.value;
+      },
+      reWritePresEnter: function (event) {
+        this.pKeyWordWithEnter = event.target.value;
+      },
+    },
+  });
+</script>

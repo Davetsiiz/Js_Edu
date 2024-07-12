@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h3>Soru 1</h3>
+      <p>VueJs Muazzam bir Framework - {{name}} {{age}}</p>
+
+      <h3>Soru 2</h3>
+      <p>{{age*5}}</p>
+
+      <h3>Soru 3</h3>
+      <p>{{number}}</p>
+
+      <h3>Soru 4</h3>
+      <span>Image:</span>
+      <img v-bind:src="link" style="width: 100%" alt="" />
+
+      <h3>Soru 5</h3>
+      <p>{{word}}</p>
+      <input type="text" v-on:input="changeWord" />
+    </div>
+  </body>
+</html>
+<script src="/Udemy_Vue/Modele1/1_exercise/1-ex.js">
+  
+</script>

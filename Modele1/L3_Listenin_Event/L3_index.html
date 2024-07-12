@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 3</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <p>Counter arttırma ve azaltma 2 farklı yöntemle yapıldı</p>
+
+        <button v-on:click="showAlert('Murat')">Alert Tıkla</button>
+        <button v-on:click="plusCounter(2)">+2</button>
+        <button v-on:click="minusCounter(2)">-2</button>
+
+        <button v-on:click="counter++">+</button>
+        <button v-on:click="counter--">-</button>
+
+        <div>
+          <p>Counter: {{counter}}</p>
+        </div>
+        <p v-on:mousemove="updateMouseCoord(2,$event)">x={{x}}, y={{y}}</p>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="/Udemy_Vue/Modele1/L3_Listenin_Event/L3_index.js"></script>
