@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<button v-on:click="counter++">Arttır</button>
+<button v-on:click="counter--">Azalt</button>
+<button v-on:click="counter=0">Sıfırla</button>
+<button v-on:click="secondCounter++"> Second Counter</button>
+<p>Counter: {{counter}} | {{secondCounter}}</p>
+<p >{{result()}} | {{output}}</p>
+</div>
+</body>
+</html>
+<script src="/Modele1/L6_Computed/L6_index.js"></script>
