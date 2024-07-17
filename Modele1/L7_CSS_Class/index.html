@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7</title>
+    <link rel="stylesheet" href="/Modele1/L7_CSS_Class/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-on:click="colorYellow= !colorYellow" class="box" :class="{yellow:colorYellow,blue:!colorYellow}" ></div>
+        <div   class="box" :class="divColorClass" ></div>
+        <div :class="[color,{yellow:colorYellow}]" class="box"></div>
+        <hr>
+        <input type="text" v-model="color">
+        <hr>
+        <br>
+        <input type="text" v-model="styleColor">
+        <div class="box" :style="{'background-color': styleColor}" ></div>
+    </div>
+</body>
+</html>
+<script src="/Modele1/L7_CSS_Class/index.js"></script>

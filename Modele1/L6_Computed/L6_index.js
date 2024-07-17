@@ -21,9 +21,22 @@ new Vue({
     //asenkron çalışır
     watch: {
         counter : function(value){
-            setTimeout(() => {
-                console.log(value);  
+           
+            //bu çalışmaz çünkü scope u kaydı
+            //klasik fonksiyon this fonksiyonunu miras almaz. içeri taşıayamaz
+            
+            setTimeout(function() {
+                this.counter=0;
             }, 1500);
+            //bu çalışır arrow fonksiyondur this'i miras alarak çalışırlar
+            // setTimeout(() => {
+            //     this.counter=0;
+            // }, 1500);
+            //bu da alternatiftir
+            // vm=this;
+            // setTimeout(function() {
+            //     vm.counter=0;
+            // }, 1500);
             
         }
 
