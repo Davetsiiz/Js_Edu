@@ -6,6 +6,9 @@ new Vue({
     styleColor:"red",
     },
     methods: {
+        startDisco:function(){
+            
+        }
     },
     computed:{
         divColorClass:function(){

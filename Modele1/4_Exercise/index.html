@@ -1,0 +1,164 @@
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    #effect {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+    }
+
+    .highlight {
+      background-color: red;
+      width: 200px !important;
+    }
+
+    .shrink {
+      background-color: grey;
+      width: 50px !important;
+    }
+
+    .absoluteCenter {
+      text-align: center;
+      align-items: center;
+      flex: auto;
+      justify-items: center;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: gray;
+      display: inline-block;
+      margin-right: 5 px;
+    }
+
+    .boxMini {
+      width: 0px;
+      height: 20px;
+      background-color: red;
+      display: inline-block;
+      margin: 3px;
+     
+    }
+    .boxCover {
+      width: 106px;
+      height: 40px;
+      border: 1px solid black;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+    }
+    
+
+    .redText {
+      color: red;
+    }
+
+    .bigRedText {
+      font-size: 50px;
+      color: red;
+    }
+
+    .bold {
+      text-overflow: ellipsis;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="exercise">
+  <!-- 1) Efekti Butona basarak başlatın. Efekt "highlight" ve/veya "shrink" class'ları arasında değişmelidir. Bu değişim her bir interval döngüsünde olmalıdır. ("effect" id' li div'e o anki aktif olan class eklenecektir.) -->
+  <div>
+    <button v-on:click="startEffect">Efekti Başlat!</button>
+    <input type="text" v-model.number="time" />
+    <div id="effect" :class="discoClass"></div>
+  </div>
+  <!-- 2) Birkaç tane CSS Class'ı üreterek bu Class'ları Array Syntax'ı ile aşağıdaki <div>' e ekleyiniz -->
+  <div
+    :class="arrayClasses"
+    v-text="arrayClasses.join(', ') + ' classları kullanıldı.'"
+  >
+    Henüz bir class'ım yok :(
+  </div>
+  <!-- 3) Örnek birkaç tane Class üreterek (Ya da ürettiklerinizi kullanarak) <input> içerisine Class adı girerek hemen alttaki <div> elementine bu yazılan Class'ı eklemeyi yapınız. -->
+  <div>
+    <input placeholder="Soru 3" type="text" v-model="inputDiv" />
+    <div :class="inputDiv">Test Text</div>
+  </div>
+  <!-- 4) Kullanıcının Class isimlerini girebileceği iki adet <input> elementimiz var. Bunları kullanarak hemen alttaki <div> elementinin Class'larini attached etmesini sağlayınız  -->
+  <div>
+    <input placeholder="Soru 4" type="text" v-model="class1" />
+    <input placeholder="Soru 4" type="text" v-model="class2" />
+    <div :class="[class1,class2]">Test Text</div>
+  </div>
+  <!-- 5) 3.Uygulamayı tekrarlayın. Fakat bu sefer Class Adı yerine Denk gelecek Style Kodlarını ekleyiniz.  -->
+  <div>
+    <input placeholder="Soru 5" type="text" v-model="styleArray" />
+    <div :style="styleArray">Test Text</div>
+  </div>
+  <!-- 6) setInterval ve Style Binding kullanarak Basit bir progress bar üretin. Progress bar' ın çalışmasını buton'a basarak başlatın. -->
+  <div>
+   <button v-on:click="startProgress">Progress İşlemini Başlat!</button> 
+   <input type="text" v-model="time1">
+    <div class="boxCover">
+      <div class="boxMini" :style="x1">
+        <p class="absoluteCenter">%{{x}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  new Vue({
+  el: "#exercise",
+  data: {
+    discoClass: "",
+    timer: null,
+    changeClass: false,
+    time: 2000,
+    arrayClasses:['bold','redText','absoluteCenter'],
+    inputDiv:"",
+    class1:"",
+    class2:"",
+    x:0,
+    y:0,
+    time1:10000,
+    box: {
+        width: '100px',
+        height: '100px',
+        backgroundColor: 'gray',
+        display: 'inline-block',
+        marginRight: '5px',
+       
+      },
+      styleArray:""
+  },
+  methods: {
+    startEffect: function () {
+      if (this.changeClass) {
+        clearInterval(this.timer);
+      }
+      this.timer = setInterval(() => {
+        this.discoClass = this.changeClass ? "shrink" : "highlight";
+        this.changeClass = !this.changeClass;
+      }, this.time?this.time:1000);
+    },
+    startProgress:function(){
+      setInterval(() => {
+        if(this.x<100){
+          this.x=this.x+1;
+        }
+        else return;
+        
+        
+      }, this.time1/100);
+    }
+  },
+  computed:{
+    x1:function(){
+      return "width: "+this.x+";";
+    }
+  }
+});
+
+</script>
